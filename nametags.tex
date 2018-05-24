@@ -1,0 +1,37 @@
+\documentclass[a4paper,10pt]{letter}
+\usepackage[freepin,cutmark]{ticket}
+\usepackage{datatool}
+\usepackage{graphicx}
+%2x4 tickets for one A4 page
+\ticketNumbers{2}{4}
+%Standard size for conference tag holders
+\ticketSize{93}{58}
+%No space between tags
+\ticketDistance{0}{0}
+
+
+%define a default ticket
+\renewcommand{\ticketdefault}{%
+  \put(70,  3){\includegraphics[width=20mm]{logo}}
+  \put( 7,  8){\normalsize Decennial Mathematics Convention}
+  \put( 7,  4){\normalsize 1 January 12020}}
+
+%define confpin command used to make ticket
+\newcommand{\confpin}[2]{\ticket{%
+    \put(48,43){\makebox[0mm]{\bfseries\LARGE #1}}
+    \put(48,33){\makebox[0mm]{\bfseries\Large #2}}}}
+
+
+\begin{document}
+\sffamily
+\DTLsetseparator{;}
+\DTLloaddb{participants}{participants.csv}
+
+\DTLforeach*
+{participants}% database label
+{\name=name,\affiliation=affiliation}% assignment of variables
+{% Make a pin for each entry in the csv
+	\confpin{\name}{\affiliation}
+}
+
+\end{document}
