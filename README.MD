@@ -9,4 +9,4 @@ It then generates a nametag for each participant, featuring the name, data and
 the logo of the conference. By default, it generated a 2x4 grid of nametags.
 
 ## Sample output
-[[https://github.com/driesvr/Conference-nametags/blob/master/sample.png?raw=true|alt=nametag]]
+![nametag](https://github.com/driesvr/Conference-nametags/blob/master/sample.png?raw=true)
