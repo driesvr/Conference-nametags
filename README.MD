@@ -1,4 +1,4 @@
-# Conference_nametags
+# Conference-nametags
 
 This LaTeX script can be used to generate nametags for conferences.
 
